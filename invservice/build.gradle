@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'com.synergy'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+
+	mavenCentral()
+	mavenLocal()
+    		maven {
+    		        url "http://repo.spring.io/release"
+    		        allowInsecureProtocol = true
+    		}
+    		maven {
+    		        url "http://repo.spring.io/milestone"
+    		        allowInsecureProtocol = true
+    		}
+}
+
+dependencies {
+    implementation(project(':inv-ui'))
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation('mysql:mysql-connector-java:8.0.27')
+
+    implementation("org.apache.commons:commons-lang3:3.0")
+    testImplementation('org.easytesting:fest-assert:1.4')
+    compileOnly('org.projectlombok:lombok:1.18.8')
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.4'
+    implementation ("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.3")
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+task "fullBuild" {
+    dependsOn "cleanTest", "test", "check", "build"
+}
