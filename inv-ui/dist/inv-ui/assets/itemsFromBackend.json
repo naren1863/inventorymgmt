@@ -1,0 +1,98 @@
+{
+    "totalCount": 8,
+    "data": [
+        {
+            "ItemId": "18_AMP_CONNECTER",
+            "ItemName": "18 AMP CONNECTER",
+            "ItemDescription": "3 Ø CONTRACTOR Scheinder 15 AMP",
+            "Uom": {
+                "UomId": "PCS"
+            },
+            "Brand": {
+                "BrandCode": "BRBP",
+                "BrandName": ""
+            },
+            "Category": {
+                "CategoryCode": "MCCB",
+                "CategoryName": ""
+            },
+            "HsnCode": {
+                "HsnCode": "8538",
+                "HsnCodeDescription": "",
+                "TaxSlab": 0
+            },
+            "CatalogueNumber": "11",
+            "UnitCost": "1",
+            "CurrencyCode": "Inr",
+            "UpdatedBy": "defaultUser"
+        },
+        {
+            "Pk": 2,
+            "Deleted": false,
+            "CreatedTimestamp": "2022-08-05 01:07:08",
+            "UpdatedTimestamp": "2022-08-05 01:07:53",
+            "CreatedBy": "naren",
+            "UpdatedBy": null,
+            "ItemId": "30_AMP_CONNECTER",
+            "ItemName": "30 AMP CONNECTER",
+            "ItemDescription": "4 Ø CONTRACTOR Scheinder 30AMP",
+            "Uom": {
+                "UomId": "PCS"
+            }
+        },
+        {
+            "Pk": 3,
+            "Deleted": false,
+            "CreatedTimestamp": "2022-08-05 01:07:08",
+            "UpdatedTimestamp": "2022-08-05 01:07:53",
+            "CreatedBy": "naren",
+            "UpdatedBy": null,
+            "ItemId": "50_AMP_CONNECTER",
+            "ItemName": "50 AMP CONNECTER",
+            "ItemDescription": "5 Ø CONTRACTOR Scheinder 50AMP",
+            "Uom": {
+                "UomId": "PCS"
+            }
+        },
+        {
+            "Pk": 4,
+            "Deleted": false,
+            "CreatedTimestamp": "2022-08-05 01:07:08",
+            "UpdatedTimestamp": "2022-08-05 01:07:53",
+            "CreatedBy": "naren1",
+            "UpdatedBy": null,
+            "ItemId": "1.5MM_4_CORE_FEXIABLE_WIRE",
+            "ItemName": "1.5 MM 4 CORE FEXIABLE WIRE",
+            "ItemDescription": "4 CORE WIRE (R-04-C)",
+            "Uom": {
+                "UomId": "MTR"
+            }
+        },
+        {
+            "Pk": 5,
+            "Deleted": false,
+            "CreatedTimestamp": "2022-08-05 01:07:08",
+            "UpdatedTimestamp": "2022-08-05 01:07:53",
+            "CreatedBy": "naren1",
+            "UpdatedBy": null,
+            "ItemId": "CT_30_AMP",
+            "ItemName": "CT 30 AMP",
+            "ItemDescription": "C/T 30 AMP (PT) UPS",
+            "Uom": {
+                "UomId": "MTR"
+            }
+        },
+        {
+            "Pk": 6,
+            "Deleted": false,
+            "CreatedTimestamp": "2022-08-16 21:08:07",
+            "UpdatedTimestamp": "2022-08-16 21:09:14",
+            "CreatedBy": "naren1",
+            "UpdatedBy": null,
+            "ItemId": "1.5MM_4_CORE_FEXIABLE_WIRE_1",
+            "ItemName": "1.5 MM 4 CORE FEXIABLE WIRE_1",
+            "ItemDescription": "4 CORE WIRE (R-04-C)",
+            "Uom": null
+        }
+    ]
+}

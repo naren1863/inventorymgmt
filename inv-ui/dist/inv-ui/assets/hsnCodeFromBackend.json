@@ -1,0 +1,24 @@
+[
+    {
+      "Pk": 50,
+      "Deleted": false,
+      "CreatedTimestamp": "2022-09-06 19:19:19",
+      "UpdatedTimestamp": "2022-09-06 19:19:32",
+      "CreatedBy": "Naren",
+      "UpdatedBy": null,
+      "HsnCode": "8538",
+      "TaxSlab": 18,
+      "HsnCodeDescription": "MCCB HSN Code"
+    },
+    {
+      "Pk": 51,
+      "Deleted": false,
+      "CreatedTimestamp": "2022-09-06 19:19:19",
+      "UpdatedTimestamp": "2022-09-06 19:19:32",
+      "CreatedBy": "Naren",
+      "UpdatedBy": null,
+      "HsnCode": "8535",
+      "TaxSlab": 17.5,
+      "HsnCodeDescription": "switches having rating upto 15 amps rewireable"
+    }
+  ]

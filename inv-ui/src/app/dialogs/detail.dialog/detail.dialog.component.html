@@ -1,0 +1,63 @@
+
+   <div class="container">
+    <h3 mat-dialog-title><strong>Item Details</strong></h3>
+
+   <mat-card style="width: 96%; background-color: lightblue; padding: 10px;">
+        <mat-card-content>
+          <div>
+              <div><strong>Item Id</strong>: {{data.ItemId}}</div>
+              <div><strong>Item Name</strong>: {{data.ItemName}}</div>
+              <div fxFlex><strong>Item Descritpion</strong>: {{data.ItemDescription}}</div>
+          </div>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-accordion class="detail-accordin">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title >
+              <strong>Other Information</strong>
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          <div>
+                <div class="detail-accordin-div">
+                    <div fxFlex><strong>Uom</strong>: {{data.Uom?.UomId}}</div>
+                    <div fxFlex><strong>Brand</strong>: {{data.Brand?.BrandName}}</div>
+                    <div fxFlex><strong>CatalogueNumber</strong>: {{data.CatalogueNumber}}</div>
+                </div>
+                <div class="detail-accordin-div">
+                    <div fxFlex><strong>Category</strong>: {{data.Category?.CategoryCode}}</div>
+                    <div fxFlex><strong>HSN Code</strong>: {{data.HsnCode?.HsnCode}}</div>
+                    <div fxFlex><strong>Unit Cost</strong>: {{data.UnitCost}} {{data.CurrencyCode}}</div>
+                </div>
+            </div>
+          
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion class="detail-accordin">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title >
+              <strong>Audit Information</strong>
+            </mat-panel-title>
+            
+          </mat-expansion-panel-header>
+          <div>
+                <div class="detail-accordin-div">
+                    <div fxFlex><strong>Created By</strong>: {{data.CreatedBy}}</div>
+                    <div fxFlex><strong>Created Date</strong>: {{data.CreatedTimestamp}}</div>
+                </div>
+                <div class="detail-accordin-div">
+                    <div fxFlex><strong>Updated By</strong>: {{data.UpdatedBy}}</div>
+                    <div fxFlex><strong>Updated Date</strong>: {{data.UpdatedTimestamp}}</div>
+                </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Close</button>
+      </div>
+   </div>

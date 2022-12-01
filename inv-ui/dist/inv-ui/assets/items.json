@@ -1,0 +1,22 @@
+[
+    {"Id": 1, "name": "Hydrogen"},
+    {"Id": 2, "name": "Helium"},
+    {"Id": 3, "name": "Lithium"},
+    {"Id": 4, "name": "Beryllium"},
+    {"Id": 5, "name": "Boron"},
+    {"Id": 6, "name": "Carbon"},
+    {"Id": 7, "name": "Nitrogen"},
+    {"Id": 8, "name": "Oxygen"},
+    {"Id": 9, "name": "Fluorine"},
+    {"Id": 10, "name": "Neon"},
+    {"Id": 11, "name": "Sodium"},
+    {"Id": 12, "name": "Magnesium"},
+    {"Id": 13, "name": "Aluminum"},
+    {"Id": 14, "name": "Silicon"},
+    {"Id": 15, "name": "Phosphorus"},
+    {"Id": 16, "name": "Sulfur"},
+    {"Id": 17, "name": "Chlorine"},
+    {"Id": 18, "name": "Argon"},
+    {"Id": 19, "name": "Potassium"},
+    {"Id": 20, "name": "Calcium"}
+]

@@ -1,0 +1,19 @@
+ [{
+     
+      "CreatedBy": "Naren",
+      "CategoryCode": "MCCB",
+      "CategoryName": "Molded Case Circuit Breaker"
+    },
+  {
+     
+      "CreatedBy": "Naren",
+      "CategoryCode": "MCB",
+      "CategoryName": "Miniature Circuit Breaker"
+    },
+  {
+     
+      "CreatedBy": "Naren",
+      "CategoryCode": "Battery",
+      "CategoryName": "Battery"
+    }
+]

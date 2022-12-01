@@ -1,0 +1,22 @@
+[
+    {
+        "Pk": 1,
+        "Deleted": false,
+        "CreatedTimestamp": "2022-08-05 01:07:08",
+        "UpdatedTimestamp": "2022-08-05 01:07:53",
+        "CreatedBy": "naren",
+        "UpdatedBy": null,
+        "UomId": "PCS",
+        "UomDescription": "Pieces"
+    },
+    {
+        "Pk": 2,
+        "Deleted": false,
+        "CreatedTimestamp": "2022-08-05 01:07:08",
+        "UpdatedTimestamp": "2022-08-05 01:07:53",
+        "CreatedBy": "naren",
+        "UpdatedBy": null,
+        "UomId": "MTR",
+        "UomDescription": "Meters"
+    }
+]
