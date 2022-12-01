@@ -1,0 +1,96 @@
+<div class="container">
+    <h3 mat-dialog-title>Add new Item</h3>
+  
+    <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+  
+      <div class="form">
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Item Id" [(ngModel)]="data.ItemId" name="itemId" required >
+            <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field color="accent">
+          <input matInput #input class="form-control" placeholder="Item Name" [(ngModel)]="data.ItemName" name="ItemName" required >
+          <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  
+      <!--Contains mat-hint for characters count and has maxLengt set-->
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput #input class="form-control" placeholder="Item Description" [(ngModel)]="data.ItemDescription" name="ItemDescription" maxlength="50" >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent">
+            <mat-label>Uom</mat-label>
+            <mat-select name="Uom" placeholder="Uom" [(ngModel)]="data.Uom" required >
+                <mat-option *ngFor="let uom of itemService.itemUnits" [value]="uom" >    
+              {{ uom.UomId }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent">
+            <mat-label>Brand</mat-label>
+            <mat-select name="Brand" placeholder="Brand" [(ngModel)]="data.Brand" required >
+                <mat-option *ngFor="let brand of itemService.brands" [value]="brand" >    
+              {{ brand.BrandName }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent">
+            <mat-label>Category</mat-label>
+            <mat-select name="Category" placeholder="Category" [(ngModel)]="data.Category" (selectionChange)="onCategoryChange($event)" required >
+                <mat-option *ngFor="let category of itemService.getItemCategories()" [value]="category" >    
+              {{ category.CategoryCode }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent">
+            <mat-label>HSN Code</mat-label>
+            <mat-select name="HSN Code" placeholder="HsnCode" [(ngModel)]="data.HsnCode" (selectionChange)="onHsnCodeChange($event)" required >
+                <mat-option *ngFor="let hsnCode of itemService.hsnCodes" [value]="hsnCode" >    
+              {{ hsnCode.HsnCode }}
+             </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput #input class="form-control" placeholder="Catalogue Number" [(ngModel)]="data.CatalogueNumber" name="CatalogueNumber" maxlength="50" >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field color="accent">
+          <input matInput #input class="form-control" placeholder="Unit Cost" [(ngModel)]="data.UnitCost" name="UnitCost" maxlength="50" >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        
+          <mat-form-field color="accent">
+              
+              <mat-select name="CurrencyCode" placeholder="CurrencyCode" [(ngModel)]="data.CurrencyCode" required >
+                  <mat-option *ngFor="let currency of itemService.currencies" [value]="currency" > 
+                {{ currency }}
+               </mat-option>
+              </mat-select>
+            </mat-form-field>
+        
+      </div>
+
+      
+      <div mat-dialog-actions>
+        <button mat-button type="submit"  [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
+        <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+[
+  {
+    "Pk": 48,
+    "Deleted": false,
+    "CreatedTimestamp": "2022-09-06 19:15:22",
+    "UpdatedTimestamp": null,
+    "CreatedBy": "Naren",
+    "UpdatedBy": null,
+    "BrandCode": "BRBP",
+    "BrandName": "Balak Ram Banarasi Pvt. Ltd."
+  },
+  {
+    "Pk": 47,
+    "Deleted": false,
+    "CreatedTimestamp": "2022-09-06 19:15:22",
+    "UpdatedTimestamp": null,
+    "CreatedBy": "Naren",
+    "UpdatedBy": null,
+    "BrandCode": "AIRM",
+    "BrandName": "Air Master"
+  },
+  {
+    "Pk": 25,
+    "Deleted": null,
+    "CreatedTimestamp": null,
+    "UpdatedTimestamp": null,
+    "CreatedBy": null,
+    "UpdatedBy": null,
+    "BrandCode": "ABC",
+    "BrandName": "ABC Pvt. Ltd."
+  },
+  {
+    "Pk": 1,
+    "Deleted": false,
+    "CreatedTimestamp": null,
+    "UpdatedTimestamp": "2022-09-06 19:15:22",
+    "CreatedBy": null,
+    "UpdatedBy": null,
+    "BrandCode": "LNT",
+    "BrandName": "Larsen & Turbo"
+  },
+  {
+    "Pk": 49,
+    "Deleted": false,
+    "CreatedTimestamp": "2022-09-06 19:15:22",
+    "UpdatedTimestamp": null,
+    "CreatedBy": "Naren",
+    "UpdatedBy": null,
+    "BrandCode": "BETC",
+    "BrandName": "BASANA ELECTRIC TRADING C0"
+  }
+]

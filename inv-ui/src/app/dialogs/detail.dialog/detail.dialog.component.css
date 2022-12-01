@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 550px;
+}
+
+.container>* {
+    width: 100%;
+}
+
+.detail-accordin {
+    padding-top: 10px;
+}
+
+
+.detail-accordin .mat-expansion-panel {
+    justify-content: center;
+    align-items: center;   
+}
+
+
+.detail-accordin .mat-expansion-panel-header {
+    background-color: rgb(237, 235, 235);
+    height: 45px;
+}
+
+.detail-accordin .div {
+    padding: 0px;
+    width: 100%;
+    display: inline-block;
+    border: 0px;
+    border-color: red;
+    border-style: solid;
+}
+
+.detail-accordin-div {
+    padding: 3px;
+    width: 48%;
+    display: inline-block;
+    align-items: center;
+    
+  
+    border: 0px;
+    border-color: coral;
+    border-style: solid;
+}
