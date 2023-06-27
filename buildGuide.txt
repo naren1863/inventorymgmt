@@ -1,0 +1,8 @@
+Building spring boot + angular app from scratch
+    https://www.youtube.com/watch?v=-P3FlYj_yHs
+
+Building Application:
+    go to root folder(inventorymgmt)
+    exec --> ./gradlew clean build
+    go to invservice
+    exec --> java -jar build/libs/invservice-0.0.1-SNAPSHOT.jar

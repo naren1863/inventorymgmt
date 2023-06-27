@@ -9,6 +9,7 @@ import { ItemCategory } from '../models/itemCategory';
 import { Brand } from '../models/brand';
 import { HsnCode } from '../models/hsnCode';
 import { ItemCategoryService } from './itemcategory.service';
+import { GlobalConfig } from './globalConfig.service';
 //import CurrencyList from 'currency-list';
 
 
@@ -19,8 +20,6 @@ export class ItemService {
   static getAllItemUoms() {
     throw new Error('Method not implemented.');
   }
-
-  isJson: boolean = true;
 
   configUrl = '/inventory/service/getItems';
   saveUrl = 'inventory/service/item/saveItem';
@@ -34,7 +33,7 @@ export class ItemService {
   //public itemCategories: ItemCategory[] = [];
   public brands: Brand[] = [];
   public hsnCodes: HsnCode[] = [];
-  public currencies: string[] = ['Inr', 'Usd', 'ABC', 'INR', 'Abc'];
+  public currencies: string[] = ['INR', 'USD', 'AUD'];
 
   itemChange: BehaviorSubject<ItemsItem[]> = new BehaviorSubject<ItemsItem[]>([]);
   // Temporarily stores data from dialogs
@@ -42,9 +41,12 @@ export class ItemService {
   totalCount !: number;
 
   constructor(private httpClient: HttpClient,
-              private loginService: LoginService, 
-              private itemCategoryService: ItemCategoryService) {
-                if(this.isJson){
+              private loginService: LoginService,
+              private itemCategoryService: ItemCategoryService, 
+              private globalConfig: GlobalConfig) {
+                console.log("-- globalConfig.isJson: ", globalConfig.isJson);
+                if(globalConfig.isJson){
+                  console.log("-- globalConfig.isJson is TRUE!!");
                   this.configUrl = '/assets/itemsFromBackend.json';
                   this.allUomsUrl = '/assets/uomsFromBackend.json';
                   this.itemCategoryUrl = '/assets/categoryFromBackend.json';
@@ -66,17 +68,17 @@ export class ItemService {
   }
 
   getAllItemUoms(): void {
-    console.log(">> getAllItemUoms");
+    //console.log(">> getAllItemUoms");
     this.httpClient.get<Uom[]>(this.allUomsUrl).subscribe((data: Uom[]) => {
           data.forEach((uom: Uom) => {
             this.itemUnits.push(uom);
           });
-        console.log("-- getAllItemUoms: No of records: ", data.length);
+      //  console.log("-- getAllItemUoms: No of records: ", data.length);
       },
       (error: HttpErrorResponse) => {
         console.log (error.name + ' ' + error.message);
       });
-      console.log("<< getAllItems"); 
+      //console.log("<< getAllItems");
   }
 
    getItemCategories(): ItemCategory[] {return []}
@@ -96,38 +98,38 @@ export class ItemService {
   //}
 
   getBrands(): void {
-    console.log(">> getBrands");
+    //console.log(">> getBrands");
     this.httpClient.get<Brand[]>(this.brandUrl).subscribe((data: Brand[]) => {
           data.forEach((brand: Brand) => {
             this.brands.push(brand);
           });
-        console.log("-- getBrands: No of records: ", data.length);
+        //console.log("-- getBrands: No of records: ", data.length);
       },
       (error: HttpErrorResponse) => {
         console.log (error.name + ' ' + error.message);
       });
-      console.log("<< getBrands");
+      //console.log("<< getBrands");
   }
 
   getHsnCodes(): void {
-    console.log(">> getHsnCodes");
+    //console.log(">> getHsnCodes");
     this.httpClient.get<HsnCode[]>(this.hsnCodeUrl).subscribe((data: HsnCode[]) => {
           data.forEach((hsnCode: HsnCode) => {
             this.hsnCodes.push(hsnCode);
           });
-        console.log("-- getHsnCodes: No of records: ", data.length);
+        //console.log("-- getHsnCodes: No of records: ", data.length);
       },
       (error: HttpErrorResponse) => {
         console.log (error.name + ' ' + error.message);
       });
-      console.log("<< getHsnCodes");
+      //console.log("<< getHsnCodes");
   }
 
   getAllItems(pageNo: number, pageSize: number): void {
-    console.log(">> getAllItems: ", pageNo, pageSize);
+    console.log(">> getAllItems: ", pageNo, pageSize, this.configUrl);
     this.httpClient.get<ItemsItem[]>(this.configUrl+"?pageNo="+pageNo+"&pageSize="+pageSize).subscribe((response: any) => {
-        this.itemChange.next(response.data);
-        this.totalCount = response.totalCount;
+        this.itemChange.next(response.Data);
+        this.totalCount = response.TotalCount;
         console.log("-- getAllItems: No of records: ", response.totalCount);
         console.log("-- this.totalCount: ", this.totalCount);
       },
@@ -139,13 +141,12 @@ export class ItemService {
 
   addItem(item: ItemsItem): void {
 
-    if(this.isJson){
-      item.CreatedBy = this.loginService.loggedUser;
+    item.CreatedBy = this.loginService.loggedUser;
+    if(this.globalConfig.isJson){
       this.addItemJson(item);
       return;
     }
-    
-    item.CreatedBy = this.loginService.loggedUser;
+
     this.httpClient.post(this.saveUrl, item).subscribe(data => {
       this.dialogData = data;
       console.log("Item Successfully Added!", data);
@@ -155,29 +156,24 @@ export class ItemService {
         console.log('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
       //this.toasterService.showToaster('Error occurred. Details: ' + err.name + ' ' + err.message, 8000);
     });
-    
+
   }
 
   updateItem(item: ItemsItem): void {
-    console.log("updating Item!", item);
-    if(this.isJson){
-      item.UpdatedBy = this.loginService.loggedUser;
-      console.log("Item List before update!", this.items);
+    console.log("Updating Item!", item, this.saveUrl);
+    item.UpdatedBy = this.loginService.loggedUser;
+    if(this.globalConfig.isJson){
       this.updateItemJson(item);
       return;
     }
-    
-    item.UpdatedBy = this.loginService.loggedUser;
-    console.log("Item List before update!", this.items);
+
     this.httpClient.post(this.saveUrl, item).subscribe(data => {
       this.dialogData = data;
-      console.log("Item Successfully Updated!", data);
+      console.log("Backend Update: Item Successfully Updated!", data);
       },
       (err: HttpErrorResponse) => {
         console.log('Error occurred. Details: Name: ', err.name,  ' Message: ', err.message, 8000);
     });
-    console.log("Item Successfully Updated1!", item);
-    console.log("Item List after update!", this.items);
   }
 
   deleteItem(itemId: string): void {
@@ -193,12 +189,12 @@ export class ItemService {
 
   addItemJson(item: ItemsItem){
     this.dialogData = item;
-    console.log("Item Successfully Added!", item);
+    console.log("JSON Update: Item Successfully Added!", item);
   }
 
   updateItemJson(item: ItemsItem){
     this.dialogData = item;
-    console.log("Item Successfully Updated!", item);
+    console.log("JSON Update: Item Successfully Updated!", item);
   }
 
 
@@ -239,5 +235,5 @@ export class ItemService {
     );
   }
 */
-  
+
 }

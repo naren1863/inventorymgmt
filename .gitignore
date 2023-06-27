@@ -1,3 +1,8 @@
-.gradle
-inv-ui/.angular
+.gradle/
+.idea/
 build
+
+inv-ui/.angular
+inv-ui/dist/
+inv-ui/build/
+inv-ui/node_modules

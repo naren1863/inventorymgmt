@@ -1,0 +1,7 @@
+
+push all changes to git
+gitignore all unnecessary folders
+UI:         fix category dropdown issue
+Backend:    convert all objects response into rest response
+Build Item category UI page with all CRUD Operations
+Think through the construction of ITEM ID using item attributes. support upto 6 attributes.

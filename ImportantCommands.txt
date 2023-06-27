@@ -1,0 +1,39 @@
+
+create boot project from spring.start.io website 
+gradle build - builds class files and creates jar file
+gradle bootRun - builds class files and brings up the server. [Does not create jar].
+
+For bringing only Node Server
+	- ng serve
+to redeploy => npm install
+
+
+Currently Working Folder: C:\Edrive\SMS\SMS\web, you should run ng serve from this folder
+
+Reference:
+Prime NG: https://www.primefaces.org/primeng/#/panel 
+
+to generate component
+ng generate component <component name>
+
+Windows command
+Install Git for Git Bash
+Install Node
+
+Installing Angular
+	npm install -g @angular/cli
+
+Connect to MySQL
+        mysql -u root -p (without password)
+	mysql -u root -p (with password)
+	
+Linux Commands
+MySQL
+ 	to check if installed 
+	 	type -a mysql
+ 	to start mysql: 
+ 		cd cd /usr/local/bin
+		mysql.server start
+	to stop mysql: 
+ 		cd cd /usr/local/bin
+		mysql.server stop
